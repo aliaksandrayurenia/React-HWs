@@ -1,4 +1,3 @@
-// src/pages/MenuPage/MenuCard.jsx
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import styles from './menu.module.css';
