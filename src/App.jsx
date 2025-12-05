@@ -1,18 +1,16 @@
-import './App.css'
-import Header from './components/header/Header'
-import Main from './components/hero/Hero'
-import Footer from './components/footer/Footer'
+import { CartProvider } from './context/CartContext';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import MenuPage from './components/menu/MenuPage';
+import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <>
-    <Header />
-    <Main />
-    <Footer />
-
-    </>
-    
-  )
+    <CartProvider>
+      <Header />
+      <MenuPage />
+      <Footer />
+    </CartProvider>
+  );
 }
 
-export default App
