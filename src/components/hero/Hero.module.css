@@ -1,0 +1,103 @@
+
+.main {
+    width: 1440px;
+    min-height: 820px;          
+    background-image: url('../../assets/HeroBackground.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 110% auto;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0 140px 0;
+    display: flex;
+    align-items: flex-start;      
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.left {
+    width: 600px;
+    text-align: left;         
+}
+
+.titleText {
+    margin: 0;
+}
+
+.siteTitle {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: #08090a;
+    margin-bottom: 30px;  
+}
+
+.spanText{
+    color: #35b8be;
+}
+
+.paragraphText {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 134%;
+    letter-spacing: 0.02em;
+    color: #546285;
+    margin-bottom: 50px; 
+}
+
+.paragraph {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24.12px;
+    color: var(--light-text);
+    letter-spacing: .5px;
+}
+
+.buttonBlock {
+    margin-bottom: 30px;
+}
+
+.ratingBlock {
+    display: flex;
+    flex-direction: column;       
+    align-items: flex-start;      
+    gap: 8px;
+}
+
+.trustpilotImg {
+    width: 110px;                 
+    height: auto;
+    display: block;
+}
+
+.trustpilotText {
+    font-size: 16px;
+    line-height: 125%;
+    margin: 0;
+    letter-spacing: .1px;
+    color: #5b6675;
+}
+
+.trustpilotTextStrong{
+    color: #35b8be;
+}
+
+.mainBtn {
+    background-color: #35b8be;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    padding: 20px 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.mainBtn:hover {
+    opacity: .85;
+}
