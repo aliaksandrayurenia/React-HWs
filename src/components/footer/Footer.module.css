@@ -1,11 +1,12 @@
 .footer {
-    width: 1440px;
+    width: 100%;
     padding: 100px 0 60px;
     background-image: url('../../assets/footerbg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
 }
+
 
 .container {
     max-width: 1200px;
@@ -107,5 +108,5 @@
 .columns,
 .column,
 .bottom {
-  text-align: left;
+    text-align: left;
 }
