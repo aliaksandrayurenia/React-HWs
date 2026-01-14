@@ -1,36 +1,22 @@
-import { useState } from 'react';
-import { useCart } from '../../context/CartContext';
-import Button from '../button/Button';
-import styles from './menu.module.css';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/cartSlice";
+import Button from "../button/Button";
+import styles from "./menu.module.css";
 
 function pickImage(item) {
-  return (
-    item.image ||
-    item.img ||
-    item.photo ||
-    item.photoUrl ||
-    item.picture ||
-    ''
-  );
+  return item.image || item.img || item.photo || item.photoUrl || item.picture || "";
 }
-
 function pickTitle(item) {
-  return (
-    item.title ||
-    item.meal ||
-    item.name ||
-    item.label ||
-    'Untitled'
-  );
+  return item.title || item.meal || item.name || item.label || "Untitled";
 }
-
 function pickDesc() {
-  return 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+  return "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
 }
 
 export default function MenuCard({ item }) {
   const [qty, setQty] = useState(1);
-  const { addToCart } = useCart();
+  const dispatch = useDispatch();
 
   const price = Number(item.price ?? item.cost ?? item.amount ?? 0);
   const img = pickImage(item);
@@ -43,7 +29,7 @@ export default function MenuCard({ item }) {
         <img
           src={img}
           alt={title}
-          onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
+          onError={(e) => (e.currentTarget.style.visibility = "hidden")}
         />
       </div>
 
@@ -60,15 +46,14 @@ export default function MenuCard({ item }) {
             type="number"
             min="1"
             value={qty}
-            onChange={(e) =>
-              setQty(Math.max(1, Number(e.target.value) || 1))
-            }
+            onChange={(e) => setQty(Math.max(1, Number(e.target.value) || 1))}
             className={styles.qty}
           />
+
           <Button
             className={styles.btn}
             onClick={() =>
-              addToCart({ id: item.id, title, price }, qty)
+              dispatch(addToCart({ product: { id: item.id, title, price, image: img }, qty }))
             }
           >
             Add to cart
@@ -78,4 +63,3 @@ export default function MenuCard({ item }) {
     </article>
   );
 }
-
