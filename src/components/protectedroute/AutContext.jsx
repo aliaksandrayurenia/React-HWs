@@ -9,10 +9,12 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
         const unsub = onAuthStateChanged(auth, (u) => {
-        setUser(u ?? null);
-        setLoading(false);
+            setUser(u);
+            setLoading(false);
         });
+
         return () => unsub();
     }, []);
 
@@ -21,8 +23,8 @@ export function AuthProvider({ children }) {
         {children}
         </AuthContext.Provider>
     );
-    }
+}
 
-    export function useAuth() {
+export function useAuth() {
     return useContext(AuthContext);
 }
