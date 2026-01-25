@@ -8,7 +8,13 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = document.getElementById("root");
+
+if (!root) {
+  throw new Error("Root container missing in index.html");
+}
+
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
