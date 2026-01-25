@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import styles from "./Order.module.css";
 
 import Button from "../button/Button";
-import burgerImg from "../../assets/burgertmp.png"; 
+import Input from "../input/Input";
+import burgerImg from "../../assets/burgertmp.png";
 
 const demoItems = [
     { id: "a1", title: "Burger Dreams", price: 9.2, qty: 1, image: burgerImg },
@@ -14,37 +15,40 @@ export default function Order() {
     const [items, setItems] = useState(demoItems);
     const [address, setAddress] = useState({ street: "", house: "" });
 
-const total = useMemo(() => {
-    return items.reduce((sum, i) => sum + i.price * i.qty, 0); }, [items]);
-
-function onQtyChange(id, nextValue) {
-    const nextQty = Math.max(1, parseInt(nextValue, 10) || 1);
-    setItems((prev) =>  prev.map((i) => (i.id === id ? { ...i, qty: nextQty } : i))
+    const total = useMemo(
+        () => items.reduce((sum, i) => sum + i.price * i.qty, 0),
+        [items]
     );
-}
 
-function onRemove(id) {
-    setItems((prev) => prev.filter((i) => i.id !== id));
-}
+    function onQtyChange(id, nextValue) {
+        const nextQty = Math.max(1, parseInt(nextValue, 10) || 1);
+        setItems((prev) =>
+        prev.map((i) => (i.id === id ? { ...i, qty: nextQty } : i))
+        );
+    }
 
-function onAddressChange(field, value) {
-    setAddress((prev) => ({ ...prev, [field]: value }));
-}
+    function onRemove(id) {
+        setItems((prev) => prev.filter((i) => i.id !== id));
+    }
 
-function onSubmit(e) {
-    e.preventDefault();
+    function onAddressChange(field, value) {
+        setAddress((prev) => ({ ...prev, [field]: value }));
+    }
 
-    const payload = {
+    function onSubmit(e) {
+        e.preventDefault();
+
+        const payload = {
         items,
         address,
         total: Number(total.toFixed(2)),
-    };
+        };
 
-    console.log("ORDER DEMO:", payload);
-    alert("Order placed (demo)!");
-}
+        console.log("ORDER DEMO:", payload);
+        alert("Order placed (demo)!");
+    }
 
-return (
+    return (
         <section className={styles.page}>
         <h1 className={styles.title}>Finish your order</h1>
 
@@ -61,7 +65,9 @@ return (
                     <p className={styles.name}>{i.title}</p>
                     </div>
 
-                    <div className={styles.price}>${i.price.toFixed(2)} USD</div>
+                    <div className={styles.price}>
+                    ${i.price.toFixed(2)} USD
+                    </div>
 
                     <input
                     className={styles.qty}
@@ -71,45 +77,39 @@ return (
                     onChange={(e) => onQtyChange(i.id, e.target.value)}
                     />
 
-                    <button
+                    <Button
                     type="button"
                     className={styles.remove}
                     onClick={() => onRemove(i.id)}
                     aria-label="Remove item"
                     >
                     X
-                    </button>
+                    </Button>
                 </article>
                 ))}
             </div>
             )}
 
             <form className={styles.form} onSubmit={onSubmit}>
-            <div className={styles.field}>
-                <label className={styles.label} htmlFor="street">
-                Street
-                </label>
-                <input
+            <Input
                 id="street"
-                className={styles.input}
+                label="Street"
                 value={address.street}
                 onChange={(e) => onAddressChange("street", e.target.value)}
-                />
-            </div>
+            />
 
-            <div className={styles.field}>
-                <label className={styles.label} htmlFor="house">
-                House
-                </label>
-                <input
+            <Input
                 id="house"
-                className={styles.input}
+                label="House"
                 value={address.house}
                 onChange={(e) => onAddressChange("house", e.target.value)}
-                />
-            </div>
+            />
 
-            <Button type="submit" className={styles.orderBtn} disabled={items.length === 0}>
+            <Button
+                type="submit"
+                className={styles.orderBtn}
+                disabled={items.length === 0}
+            >
                 Order
             </Button>
             </form>

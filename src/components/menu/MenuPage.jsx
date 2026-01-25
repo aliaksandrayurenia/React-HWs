@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMeals } from "../../store/mealsSlice";
+import { selectMealTabs, makeSelectMealsByCategory } from "../../store/mealsSelectors";
 import MenuCard from "./MenuCard";
 import Button from "../button/Button";
 import styles from "./menu.module.css";
@@ -10,6 +11,8 @@ const PAGE = 6;
 export default function MenuPage() {
     const dispatch = useDispatch();
     const { items: all, status, error } = useSelector((s) => s.meals);
+
+    const tabs = useSelector(selectMealTabs);
 
     const [category, setCategory] = useState("");
     const [visible, setVisible] = useState(PAGE);
@@ -25,37 +28,14 @@ export default function MenuPage() {
         }
     }, [all, category]);
 
-    const tabs = useMemo(() => {
-        const values = Array.from(
-        new Set(
-            all
-            .map((x) => (x.category ?? "").toString().trim())
-            .filter(Boolean)
-        )
-        );
+    const selectFiltered = useMemo(makeSelectMealsByCategory, []);
+    const filtered = useSelector((state) => selectFiltered(state, category));
 
-        return values.map((value) => ({ value, label: value }));
-    }, [all]);
-
-    const filtered = useMemo(() => {
-        if (!category) return [];
-        const cat = category.toLowerCase();
-        return all.filter(
-        (x) => (x.category ?? "").toString().toLowerCase() === cat
-        );
-    }, [all, category]);
-
-    const shown = useMemo(() => filtered.slice(0, visible), [filtered, visible]);
-
+    const shown = filtered.slice(0, visible);
     const canSeeMore = visible < filtered.length;
 
-    if (status === "loading") {
-        return <section className={styles.wrap}>Loading...</section>;
-    }
-
-    if (status === "error") {
-        return <section className={styles.wrap}>{error}</section>;
-    }
+    if (status === "loading") return <section className={styles.wrap}>Loading...</section>;
+    if (status === "error") return <section className={styles.wrap}>{error}</section>;
 
     return (
         <section className={styles.wrap}>
@@ -73,9 +53,7 @@ export default function MenuPage() {
             <Button
                 key={t.value}
                 type="button"
-                className={`${styles.tab} ${
-                category === t.value ? styles.tabActive : ""
-                }`}
+                className={`${styles.tab} ${category === t.value ? styles.tabActive : ""}`}
                 onClick={() => {
                 setCategory(t.value);
                 setVisible(PAGE);
@@ -106,7 +84,7 @@ export default function MenuPage() {
             <p className={styles.more} style={{ color: "#6b7280" }}>
             no more items
             </p>
-    )}
-    </section>
+        )}
+        </section>
 );
 }

@@ -1,15 +1,17 @@
-import React from "react";
 import { useSelector } from "react-redux";
+import {
+  selectTotalQty,
+  selectTotalAmount,
+} from "../../store/cartSelectors";
+import styles from './Header.module.css'
 import Logo from "../../assets/Logo.svg";
-import Cart from "../../assets/Cart.svg";
-import SmallCart from "../../assets/SmallCart.svg";
-import styles from "./Header.module.css";
+import Cart from "../../assets/Cart.svg"
+import SmallCart from "../../assets/SmallCart.svg"
+
 
 export default function Header() {
-    const items = useSelector((s) => s.cart.items);
-
-    const totalQty = items.reduce((sum, x) => sum + (x.qty || 0), 0);
-    const totalAmount = items.reduce((sum, x) => sum + (x.qty || 0) * Number(x.price || 0), 0);
+  const totalQty = useSelector(selectTotalQty);
+  const totalAmount = useSelector(selectTotalAmount);
 
     return (
         <header className={styles.header}>
