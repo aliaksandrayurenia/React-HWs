@@ -1,105 +1,112 @@
 .footer {
-    width: 100%;
-    padding: 100px 0 60px;
-    background-image: url('../../assets/footerbg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
+  width: 100%;
+  padding: 100px 0 60px;
+
+  /* светлая тема может оставаться с картинкой */
+  background-color: var(--footer-bg);
+  background-image: url("../../assets/footerbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
 }
 
+/* важно: в dark теме убираем светлую картинку */
+:root[data-theme="dark"] .footer {
+  background-image: none;
+}
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
 }
 
 .leftSection {
-    max-width: 280px;
+  max-width: 280px;
 }
 
 .text {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 180%;
-    letter-spacing: 0.02em;
-    color: #546285;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 180%;
+  letter-spacing: 0.02em;
+  color: var(--footer-text);
 }
 
 .columns {
-    display: flex;
-    gap: 80px;
+  display: flex;
+  gap: 80px;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .column h4 {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 154%;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #08090a;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--footer-title);
 }
 
 .column a {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 133%;
-    color: #546285;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  color: var(--footer-text);
 }
 
 .column a:hover {
-    color: #35b8be;
+  color: var(--accent);
 }
 
 .line {
-    width: 100%;
-    max-width: 1200px;
-    margin: 60px auto;
-    border: none;
-    height: 1px;
-    background: #e7eaee;
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  border: none;
+  height: 1px;
+  background: var(--footer-line);
 }
 
 .bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .bottom p {
-    font-size: 15px;
-    color: #546285;
+  font-size: 15px;
+  color: var(--footer-text);
 }
 
 .accent {
-    color: #35b8be;
+  color: var(--accent);
 }
 
 .socials {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .socials img {
-    padding: 8px;
-    cursor: pointer;
-    transition: 0.2s;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .socials img:hover {
-    background: #f5fafa;
-    border-color: #35b8be;
+  background: var(--footer-social-hover);
 }
 
 .footer,
@@ -108,5 +115,5 @@
 .columns,
 .column,
 .bottom {
-    text-align: left;
+  text-align: left;
 }
