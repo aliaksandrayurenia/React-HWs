@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff;
+  background: var(--bg);
   z-index: 100;
   box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
 
@@ -33,10 +33,13 @@
 }
 
 .menu {
+    display: flex;
+  align-items: center;
   margin-left: auto;
 }
 .navList {
   display: flex;
+  align-items: center;
   gap: 32px;
   align-items: center;
   list-style: none;
@@ -48,17 +51,17 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 133%;
-  color: #28224b;
+  color: var(--text);          
 }
 
 .navLink:hover {
-  color: #35b8be;
+  color: var(--accent);
 }
-
 
 .navLinkActive {
-  color: #35b8be;
+  color: var(--accent);
 }
+
 
 
 .cartBlock {
@@ -101,16 +104,70 @@
 .badge {
   position: absolute;
   z-index: 10;
-  top: -10px;      
-  right: -10px;     
+  top: -10px;
+  right: -10px;
+
   width: 25px;
   height: 25px;
   display: grid;
   place-items: center;
-  background: #fff;
-  color: #000000;
+
+  background: var(--surface);  
+  color: var(--text);           
+
   font-weight: 600;
   font-size: 12px;
   border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+
+.themeSelect {
+  height: 34px;
+  min-width: 90px;
+  padding: 0 34px 0 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 14px,
+    calc(100% - 12px) 14px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.themeSelect:hover {
+  border-color: var(--accent);
+}
+
+.themeSelect:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(111, 106, 248, 0.25); /* можно заменить на var если хочешь */
+}
+
+
+
+
+:root[data-theme="dark"] .header {
+  box-shadow: 0px 2px 12px rgba(0,0,0,0.4);
 }

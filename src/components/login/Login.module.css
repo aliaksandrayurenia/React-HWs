@@ -3,7 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f5fbfd;
+
+  background: var(--bg);
+
   padding-top: 150px;
 }
 
@@ -12,18 +14,21 @@
   font-size: 64px;
   font-weight: 300;
   letter-spacing: 6px;
-  color: #6bb7bf;
+
+  color: var(--accent);
+
   text-align: center;
 }
 
-
 .card {
   width: min(820px, 100%);
-  background: #ffffff;
-  border: 1px solid #dbeef2;
-  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
   padding: 44px 52px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   margin-bottom: 250px;
 }
 
@@ -33,13 +38,15 @@
   column-gap: 28px;
   row-gap: 22px;
   align-items: center;
-  margin-bottom: 0; /* убираем, т.к. gap рулит */
 }
 
 .label {
   font-size: 18px;
-  color: #222;
   text-align: right;
+
+  /* вместо #222 */
+  color: var(--text);
+  opacity: 0.9;
 }
 
 .input {
@@ -47,15 +54,23 @@
   width: 100%;
   padding: 0 16px;
   font-size: 16px;
-  border: 1px solid #d6dadd;
-  border-radius: 6px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
   outline: none;
-  background: #fff;
+
+  background: var(--surface);
+  color: var(--text);
+}
+
+.input::placeholder {
+  color: var(--text);
+  opacity: 0.55;
 }
 
 .input:focus {
-  border-color: #8ecdd4;
-  box-shadow: 0 0 0 3px rgba(142, 205, 212, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(111, 106, 248, 0.18);
 }
 
 .actions {
@@ -63,34 +78,4 @@
   justify-content: center;
   gap: 24px;
   margin-top: 28px;
-}
-
-.submit,
-.cancel {
-  min-width: 150px;
-  height: 44px;
-  padding: 0 34px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.submit {
-  border: none;
-  background: #63b8c1;
-  color: #fff;
-}
-
-.submit:hover {
-  filter: brightness(0.98);
-}
-
-.cancel {
-  border: 1px solid #d6dadd;
-  background: #ffffff;
-  color: #222;
-}
-
-.cancel:hover {
-  background: #fafafa;
 }

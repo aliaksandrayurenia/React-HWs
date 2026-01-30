@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectTotalQty, selectTotalAmount } from "../../store/cartSelectors";
+import { useTheme, type ThemePreference } from "../context/ThemeContext"
 
 import styles from "./Header.module.css";
 import Logo from "../../assets/Logo.svg";
@@ -10,6 +11,8 @@ import SmallCart from "../../assets/SmallCart.svg";
 export default function Header() {
   const totalQty = useSelector(selectTotalQty);
   const totalAmount = useSelector(selectTotalAmount);
+
+  const { preference, setPreference } = useTheme();
 
   return (
     <header className={styles.header}>
@@ -63,18 +66,35 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className={styles.cartBlock}>
-          <div className={styles.cart}>
-            <img src={Cart} alt="cart" className={styles.cartImg} />
-            <img
-              src={SmallCart}
-              alt="small cart"
-              className={styles.smallCart}
-            />
-          </div>
+        <div className={styles.right}>
+          <select
+            value={preference}
+            onChange={(e) =>
+              setPreference(e.target.value as ThemePreference)
+            }
+            aria-label="Select theme"
+            className={styles.themeSelect}
+          >
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
 
-          <span className={styles.badge}>{totalQty}</span>
-          <span className={styles.total}>${totalAmount.toFixed(2)}</span>
+          <div className={styles.cartBlock}>
+            <div className={styles.cart}>
+              <img src={Cart} alt="cart" className={styles.cartImg} />
+              <img
+                src={SmallCart}
+                alt="small cart"
+                className={styles.smallCart}
+              />
+            </div>
+
+            <span className={styles.badge}>{totalQty}</span>
+            <span className={styles.total}>
+              ${totalAmount.toFixed(2)}
+            </span>
+          </div>
         </div>
       </div>
     </header>

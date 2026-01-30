@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import styles from "./Button.module.css";
 
 type Props = PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>;
 
@@ -9,7 +10,11 @@ export default function Button({
   ...props
 }: Props) {
   return (
-    <button type={type} className={className} {...props}>
+    <button
+      type={type}
+      className={`${styles.button} ${className}`.trim()}
+      {...props}
+    >
       {children}
     </button>
   );

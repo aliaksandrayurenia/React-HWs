@@ -1,9 +1,9 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import mockup from "../../assets/mockup.png";
 import trustpilot from "../../assets/trustpilot.svg";
 import { useFetch } from "../hooks/useFetch";
 import styles from "./Hero.module.css";
+import Button from "../button/Button";
 
 export default function Main() {
     const navigate = useNavigate();
@@ -27,13 +27,13 @@ export default function Main() {
             </div>
 
             <div className={styles.buttonBlock}>
-                <button
-                className={styles.mainBtn}
-                onClick={() => navigate("/order")}
-                type="button"
-                >
-                Place an Order
-                </button>
+                <Button
+                    type="button"
+                    className={styles.mainBtn}
+                    onClick={() => navigate("/order")}
+                    >
+                    Place an Order
+                </Button>
             </div>
 
             <div className={styles.ratingBlock}>
