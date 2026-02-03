@@ -1,14 +1,15 @@
 .main {
-  width: 1440px;
+  width: 100%;
   min-height: 820px;
 
   background-color: var(--bg);
 
-  background-image: url('../../assets/HeroBackground.svg');
+  background-image: url("../../assets/HeroBackground.svg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 110% auto;
 }
+
 
 .container {
   max-width: 1200px;

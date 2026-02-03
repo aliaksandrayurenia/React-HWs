@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "Gražus maistas ir išsinešimui, <highlight>pristatoma</highlight> iki jūsų durų.",
+    "description": "Tai demonstracinis tekstas. Čia galite aprašyti paslaugą, privalumus ir pristatymo greitį.",
+    "cta": "Užsakyti",
+    "ratingAlt": "Trustpilot įvertinimas",
+    "ratingScore": "4.8 iš 5",
+    "ratingBasedOn": "remiantis 2000+ atsiliepimų",
+    "apiStatus": "API būsena",
+    "heroAlt": "Maisto pristatymo programėlės maketas"
+  },
+
+  "nav": {
+    "home": "Pagrindinis",
+    "menu": "Meniu",
+    "order": "Užsakymas"
+  },
+  "theme": {
+    "label": "Temos pasirinkimas",
+    "system": "Sistema",
+    "light": "Šviesi",
+    "dark": "Tamsi"
+  },
+  "alt": {
+    "logo": "Logotipas",
+    "cart": "Krepšelis",
+    "smallCart": "Mažas krepšelis"
+  },
+  "language": {
+    "label": "Kalbos pasirinkimas",
+    "en": "Anglų",
+    "ru": "Rusų",
+    "lt": "Lietuvių"
+  },
+
+  "footer": {
+    "description": "Išsinešimo ir pristatymo šablonas<br/>mažoms ir vidutinėms įmonėms.",
+    "company": {
+      "title": "Įmonė",
+      "home": "Pagrindinis",
+      "order": "Užsakymas",
+      "faq": "DUK",
+      "contact": "Kontaktai"
+    },
+    "template": {
+      "title": "Šablonas",
+      "styleGuide": "Stiliaus vadovas",
+      "changelog": "Pakeitimų žurnalas",
+      "licence": "Licencija",
+      "webflow": "Webflow universitetas"
+    },
+    "flowbase": {
+      "title": "Flowbase",
+      "more": "Daugiau šablonų"
+    },
+    "bottom": "Sukurta <flowbase>Flowbase</flowbase> · Naudojant <webflow>Webflow</webflow>"
+  },
+  "alt": {
+    "logo": "Logotipas",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "youtube": "YouTube"
+  }
+}

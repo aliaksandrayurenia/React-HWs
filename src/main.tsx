@@ -6,8 +6,8 @@ import { AuthProvider } from "./components/protectedroute/AutContext";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-
 import { ThemeProvider } from "./components/context/ThemeContext"
+import "./i18n";
 
 const root = document.getElementById("root");
 
