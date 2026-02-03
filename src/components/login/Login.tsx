@@ -3,20 +3,24 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import styles from "./Login.module.css";
-import Button from '../button/Button';
+import Button from "../button/Button";
 
+type LocationState = {
+    from?: string;
+};
 
 export default function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const redirectTo = location.state?.from || "/order";
+    const redirectTo =
+        ((location.state as LocationState | null)?.from as string) || "/order";
 
-    const onSubmit = async (e) => {
+    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError("");
 
@@ -24,7 +28,9 @@ export default function Login() {
         await signInWithEmailAndPassword(auth, email, password);
         navigate(redirectTo, { replace: true });
         } catch (err) {
-        setError(err.message);
+        const message =
+            err instanceof Error ? err.message : "Failed to login";
+        setError(message);
         }
     };
 
@@ -66,14 +72,17 @@ export default function Login() {
 
             <div className={styles.actions}>
                 <Button type="submit" className={styles.submit}>
-                    Submit
+                Submit
                 </Button>
 
-                <Button type="button" className={styles.cancel}>
-                    Cancel
+                <Button
+                type="button"
+                className={styles.cancel}
+                onClick={onCancel}
+                >
+                Cancel
                 </Button>
             </div>
-
             </form>
 
             {error && <p className={styles.error}>{error}</p>}

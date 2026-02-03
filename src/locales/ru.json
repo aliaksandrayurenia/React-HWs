@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "Вкусная еда и доставка, <highlight>прямо</highlight> к вашей двери.",
+    "description": "Это демонстрационный текст. Здесь можно описать сервис, преимущества и скорость доставки.",
+    "cta": "Сделать заказ",
+    "ratingAlt": "Рейтинг Trustpilot",
+    "ratingScore": "4.8 из 5",
+    "ratingBasedOn": "на основе 2000+ отзывов",
+    "apiStatus": "Статус API",
+    "heroAlt": "Макет приложения доставки еды"
+  },
+
+  "nav": {
+    "home": "Главная",
+    "menu": "Меню",
+    "order": "Заказ"
+  },
+  "theme": {
+    "label": "Выбор темы",
+    "system": "Системная",
+    "light": "Светлая",
+    "dark": "Тёмная"
+  },
+  "alt": {
+    "logo": "Логотип",
+    "cart": "Корзина",
+    "smallCart": "Маленькая корзина"
+  },
+  "language": {
+    "label": "Выбор языка",
+    "en": "Английский",
+    "ru": "Русский",
+    "lt": "Литовский"
+  },
+
+  "footer": {
+    "description": "Шаблон для доставки и самовывоза<br/>для малого и среднего бизнеса.",
+    "company": {
+      "title": "Компания",
+      "home": "Главная",
+      "order": "Заказ",
+      "faq": "Вопросы и ответы",
+      "contact": "Контакты"
+    },
+    "template": {
+      "title": "Шаблон",
+      "styleGuide": "Руководство по стилю",
+      "changelog": "История изменений",
+      "licence": "Лицензия",
+      "webflow": "Университет Webflow"
+    },
+    "flowbase": {
+      "title": "Flowbase",
+      "more": "Больше шаблонов"
+    },
+    "bottom": "Сделано <flowbase>Flowbase</flowbase> · Работает на <webflow>Webflow</webflow>"
+  },
+  "alt": {
+    "logo": "Логотип",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "youtube": "YouTube"
+  }
+}

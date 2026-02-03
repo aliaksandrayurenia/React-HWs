@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Beautiful food & takeaway, <highlight>delivered</highlight> to your door.",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",
+    "cta": "Place an Order",
+    "ratingAlt": "Trustpilot rating",
+    "ratingScore": "4.8 out of 5",
+    "ratingBasedOn": "based on 2000+ reviews",
+    "apiStatus": "API status",
+    "heroAlt": "Food delivery app mockup"
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "order": "Order"
+  },
+  "theme": {
+    "label": "Select theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "alt": {
+    "logo": "Logo",
+    "cart": "Cart",
+    "smallCart": "Small cart"
+  },
+  "language": {
+    "label": "Select language",
+    "en": "English",
+    "ru": "Russian",
+    "lt": "Lithuanian"
+  },
+
+  "footer": {
+    "description": "Takeaway & Delivery template<br/>for small to medium businesses.",
+    "company": {
+      "title": "Company",
+      "home": "Home",
+      "order": "Order",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "template": {
+      "title": "Template",
+      "styleGuide": "Style Guide",
+      "changelog": "Changelog",
+      "licence": "Licence",
+      "webflow": "Webflow University"
+    },
+    "flowbase": {
+      "title": "Flowbase",
+      "more": "More Cloneables"
+    },
+    "bottom": "Built by <flowbase>Flowbase</flowbase> · Powered by <webflow>Webflow</webflow>"
+  },
+  "alt": {
+    "logo": "Logo",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "youtube": "YouTube"
+  }
+}

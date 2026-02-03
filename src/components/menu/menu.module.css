@@ -22,7 +22,7 @@
     line-height: 110%;
     letter-spacing: 0.03em;
     text-align: center;
-    color: #35b8be;
+    color: var(--accent);
 }
 
 .sub {
@@ -34,7 +34,7 @@
     color: #546285;
 }
 
-.linkFake { color: #3aa9ad; text-decoration: underline; }
+.linkFake { color: var(--accent); text-decoration: underline; }
 
 
 .tabs {
@@ -51,19 +51,19 @@
     align-items: center;
     justify-content: center;
     padding: 0;           
-    border: 1px solid #d6e8ea;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #fff;
-    color: #374151;
+    background: var(--btn-outline-bg);
+    color: var(--btn-outline-text);
     font-size: 16px;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .tabActive {
-    background: #57b9bf;
-    color: #fff;
-    border-color: #57b9bf;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border-color: transparent;
 }
 
 
@@ -78,8 +78,9 @@
     grid-template-columns: 120px 1fr;
     align-items: center;
     gap: 16px;
-    background: #fff;
-    border: 1px solid #e6f1f2;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 18px 20px;
     min-height: 200px;
@@ -116,17 +117,18 @@
     justify-content: space-between;
     gap: 8px;
     margin-bottom: 2px; 
+    
 }
 
 .title {
     font-size: 17px;
     font-weight: 600;
-    color: #111827;
+    color: var(--accent);
     line-height: 1.1;
 }
 
 .price {
-    color: #57b9bf;
+    color: var(--accent);
     font-weight: 600;
     font-size: 15px;
 }
@@ -159,46 +161,40 @@
     border-radius: 8px;
     padding: 0 8px;
     font-size: 16px;
+    background: var(--surface);
+    color: var(--text);
+
 }
 
+.btn,
+.seeMore {
+  width: 150px;
+  height: 50px;
 
-.btn {
-    width: 150px;
-    height: 50px;
-    background: #57b9bf;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.2s ease;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.btn:hover {
-    filter: brightness(0.95);
-    transform: translateY(-1px);
+
+.btn:hover,
+.seeMore:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-1px);
 }
 
 .more {
     display: flex;
     justify-content: center;
     margin-top: 40px;
-}
-
-.seeMore {
-    width: 150px;               
-    height: 50px;
-    background: #57b9bf;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.seeMore:hover {
-    filter: brightness(0.95);
-    transform: translateY(-1px);
 }
