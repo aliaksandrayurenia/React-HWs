@@ -1,103 +1,129 @@
-
 .main {
-    width: 1440px;
-    min-height: 820px;          
-    background-image: url('../../assets/HeroBackground.svg');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 110% auto;
+  width: 100%;
+  min-height: 820px;
+
+  background-color: var(--bg);
+
+  background-image: url("../../assets/HeroBackground.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 110% auto;
 }
 
+
 .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 100px 0 140px 0;
-    display: flex;
-    align-items: flex-start;      
-    justify-content: space-between;
-    gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 0 140px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .left {
-    width: 600px;
-    text-align: left;         
+  width: 600px;
+  text-align: left;
 }
 
 .titleText {
-    margin: 0;
+  margin: 0;
 }
 
 .siteTitle {
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 100%;
-    letter-spacing: 0.03em;
-    color: #08090a;
-    margin-bottom: 30px;  
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+
+  color: var(--text);
+
+  margin-bottom: 30px;
 }
 
-.spanText{
-    color: #35b8be;
+.spanText {
+  color: var(--accent);
 }
 
 .paragraphText {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 134%;
-    letter-spacing: 0.02em;
-    color: #546285;
-    margin-bottom: 50px; 
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 134%;
+  letter-spacing: 0.02em;
+
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+
+  margin-bottom: 50px;
 }
 
 .paragraph {
-    margin: 0;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24.12px;
-    color: var(--light-text);
-    letter-spacing: .5px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.12px;
+
+  color: var(--text);
+
+  letter-spacing: 0.5px;
 }
 
 .buttonBlock {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .ratingBlock {
-    display: flex;
-    flex-direction: column;       
-    align-items: flex-start;      
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .trustpilotImg {
-    width: 110px;                 
-    height: auto;
-    display: block;
+  width: 110px;
+  height: auto;
+  display: block;
 }
 
 .trustpilotText {
-    font-size: 16px;
-    line-height: 125%;
-    margin: 0;
-    letter-spacing: .1px;
-    color: #5b6675;
+  font-size: 16px;
+  line-height: 125%;
+  margin: 0;
+  letter-spacing: 0.1px;
+
+  color: color-mix(in srgb, var(--text) 65%, transparent);
 }
 
-.trustpilotTextStrong{
-    color: #35b8be;
+.trustpilotTextStrong {
+  color: var(--accent);
 }
+
 
 .mainBtn {
-    background-color: #35b8be;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    padding: 20px 35px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s ease;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  font-size: 16px;
+  padding: 20px 35px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
+
 .mainBtn:hover {
-    opacity: .85;
+  background-color: var(--btn-bg-hover);
 }
+
+.mainBtn:active {
+  transform: translateY(1px);
+}
+
+.mainBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+:root[data-theme="dark"] .main {
+  background-image: none;
+}
+

@@ -1,0 +1,56 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  height: 40px;
+  padding: 0 38px 0 12px;
+
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.15));
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  color: var(--text, #111);
+
+  font: inherit;
+  line-height: 1;
+
+  cursor: pointer;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.select:hover {
+  border-color: var(--border-hover, rgba(0, 0, 0, 0.25));
+  background: var(--surface-hover, rgba(0, 0, 0, 0.02));
+}
+
+.select:focus-visible {
+  border-color: var(--focus, rgba(0, 0, 0, 0.35));
+  box-shadow: 0 0 0 4px var(--focus-ring, rgba(0, 0, 0, 0.12));
+}
+
+.select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chevron {
+  position: absolute;
+  right: 12px;
+
+  width: 10px;
+  height: 10px;
+
+  pointer-events: none;
+
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.55;
+}
